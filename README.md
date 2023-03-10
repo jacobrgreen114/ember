@@ -7,7 +7,16 @@ During development I quickly realized that I had to manage a lot of files (image
 The vision for Ember is to make working with non-source files easier.
 
 ## CMake Integration
-CMake integration is currently not implemented.
+```
+# imports ember module
+find_package(Ember MODULE REQUIRED)
+
+# converts a binary file to a c++ std::array
+ember_bake(<target> FILE <binary_file>)
+
+# compiles shader and then calls ember_bake()
+target_shaders(<target> SPIRV [<shader_file>...])
+```
 
 ## Development
 Ember is currently in very early stages of development and highly likely to change.
